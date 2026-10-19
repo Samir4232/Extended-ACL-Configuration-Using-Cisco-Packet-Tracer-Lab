@@ -1,12 +1,12 @@
-# 🌐 LAB 43 - Extended ACL Configuration Using Cisco Packet Tracer
+#  LAB 3 - Extended ACL Configuration Using Cisco Packet Tracer
 
-## 🎯 Objective
+## Objective
 
 Configure an Extended Access Control List (ACL) to allow only the IT department PCs to access the DHCP server while denying the HR department PCs. All hosts should still be able to access the Web Server.
 
 ---
 
-## 🖧 Devices Required
+##  Devices Required
 
 * 1 × Cisco 2911 Router
 * 2 × Cisco 2960-24TT Switches
@@ -15,7 +15,7 @@ Configure an Extended Access Control List (ACL) to allow only the IT department 
 
 ---
 
-## 📋 IP Addressing Table
+##  IP Addressing Table
 
 ### Router Interfaces
 
@@ -42,7 +42,7 @@ Configure an Extended Access Control List (ACL) to allow only the IT department 
 
 ---
 
-# ⚙️ Configure Router Interfaces
+#  Configure Router Interfaces
 
 ```cisco
 enable
@@ -64,7 +64,7 @@ write memory
 
 ---
 
-# 💻 Configure Host PCs
+#  Configure Host PCs
 
 Assign the following IP configuration:
 
@@ -77,7 +77,7 @@ Assign the following IP configuration:
 
 ---
 
-# 🖥️ Configure Servers
+#  Configure Servers
 
 ## DHCP Server
 
@@ -99,7 +99,7 @@ Assign the following IP configuration:
 
 ---
 
-# 🧪 Verify Connectivity Before Applying ACL
+#  Verify Connectivity Before Applying ACL
 
 From each PC, verify connectivity to both servers.
 
@@ -114,7 +114,7 @@ Expected Result:
 
 ---
 
-# 🔒 Configure Extended ACL
+# Configure Extended ACL
 
 **Objective**
 
@@ -137,7 +137,7 @@ write memory
 
 ---
 
-# 🔗 Apply the ACL
+#  Apply the ACL
 
 Apply the ACL inbound on the LAN interface (closest to the source).
 
@@ -155,7 +155,7 @@ write memory
 
 ---
 
-# 🔍 Verify ACL Configuration
+#  Verify ACL Configuration
 
 Display the configured ACL.
 
@@ -175,7 +175,7 @@ Extended IP access list 120
 
 ---
 
-# 🧪 Test Connectivity After Applying ACL
+#  Test Connectivity After Applying ACL
 
 ## From P1 (IT)
 
@@ -183,13 +183,13 @@ Extended IP access list 120
 ping 10.10.10.20
 ```
 
-✅ Expected: Success
+ Expected: Success
 
 ```text
 ping 10.10.10.10
 ```
 
-✅ Expected: Success
+ Expected: Success
 
 ---
 
@@ -199,13 +199,13 @@ ping 10.10.10.10
 ping 10.10.10.20
 ```
 
-✅ Expected: Success
+Expected: Success
 
 ```text
 ping 10.10.10.10
 ```
 
-✅ Expected: Success
+ Expected: Success
 
 ---
 
@@ -215,13 +215,13 @@ ping 10.10.10.10
 ping 10.10.10.20
 ```
 
-❌ Expected: Request timed out
+ Expected: Request timed out
 
 ```text
 ping 10.10.10.10
 ```
 
-✅ Expected: Success
+ Expected: Success
 
 ---
 
@@ -231,17 +231,17 @@ ping 10.10.10.10
 ping 10.10.10.20
 ```
 
-❌ Expected: Request timed out
+ Expected: Request timed out
 
 ```text
 ping 10.10.10.10
 ```
 
-✅ Expected: Success
+ Expected: Success
 
 ---
 
-# 📊 Useful Verification Commands
+#  Useful Verification Commands
 
 Display configured ACLs:
 
@@ -263,7 +263,7 @@ show ip interface
 
 ---
 
-# 🔐 ACL Behavior Summary
+#  ACL Behavior Summary
 
 | Host    | DHCP Server (10.10.10.20) | Web Server (10.10.10.10) |
 | ------- | ------------------------- | ------------------------ |
@@ -274,6 +274,10 @@ show ip interface
 
 ---
 
-# ✅ Result
+# Result
 
 Successfully configured an Extended ACL to permit only the IT department hosts (`192.168.10.10` and `192.168.10.20`) to access the DHCP Server while denying access from the HR department. All hosts retained access to the Web Server, demonstrating selective traffic filtering using Extended ACLs. 🚀
+
+## Network Topology
+
+![Enterprise Network Topology](topology.png)
