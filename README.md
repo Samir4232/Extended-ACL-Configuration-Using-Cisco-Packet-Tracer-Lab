@@ -280,4 +280,4 @@ Successfully configured an Extended ACL to permit only the IT department hosts (
 
 ## Network Topology
 
-![Enterprise Network Topology](topology.png)
+![Enterprise Network Topology](topology-screeshot.png)
